@@ -12,7 +12,7 @@
 // const reverseString = str => str.split('').reduce((rev, char) => char + rev, '')
 // const palindrome = str => str === reverseString(str);
 
-// Alternative solution
+// Alternative solutions
 
 // Optimized
 // function palindrome(str) {
