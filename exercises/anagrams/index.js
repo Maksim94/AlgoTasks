@@ -8,6 +8,40 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+const cleanString = str => str.replace(/[^\w]/g, '').toLowerCase();
+const sortString = str => str.split('').sort().join('');
+const cleanAndSortString = str => sortString(cleanString(str));
+
+// More tricky solution
+const anagrams = (stringA, stringB) => {
+    return cleanAndSortString(stringA) === cleanAndSortString(stringB);
+}
 
 module.exports = anagrams;
+
+
+/*
+const buildCharMap = str => {
+    const charMap = {};
+
+    for (let char of cleanString(str)) {
+        charMap[char] = charMap[char] + 1 || 1;
+    }
+
+    return charMap;
+}
+
+// Common solution
+function anagrams(stringA, stringB) {
+    const charMapA = buildCharMap(stringA);
+    const charMapB = buildCharMap(stringB);
+    let isAnagram = false;
+
+    if (Object.keys(charMapA).length === Object.keys(charMapB).length) {
+        isAnagram = Object.keys(charMapA).every(char => charMapA[char] === charMapB[char]);
+        // isAnagram = !Object.keys(charMapA).some(char => charMapA[char] !== charMapB[char]);
+    }
+
+    return isAnagram;
+};
+*/
