@@ -9,7 +9,7 @@
 
 // const reverse =str => str.split('').reverse().join('');
 // const reverse = str => str.split('').reduce((rev, char) => char + rev, '');
-const reverse = str => [...str].reduceRight((acc, curr) => acc + curr, '');
+// const reverse = str => [...str].reduceRight((acc, curr) => acc + curr, '');
 
 const reverse = str => {
     let reversed = '';
