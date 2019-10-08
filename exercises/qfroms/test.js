@@ -39,3 +39,24 @@ test('peek returns, but does not remove, the first value', () => {
   expect(q.remove()).toEqual(1);
   expect(q.remove()).toEqual(2);
 });
+
+test('check peek with more complicated case', () => {
+  const q = new Queue();
+  q.add(1);
+  q.add(2);
+  expect(q.peek()).toEqual(1);
+  expect(q.peek()).toEqual(1);
+  expect(q.remove()).toEqual(1);
+  q.add(3);
+  expect(q.remove()).toEqual(2);
+  q.add(4);
+  expect(q.remove()).toEqual(3);
+  q.add(5);
+  q.add(6);
+  expect(q.remove()).toEqual(4);
+  expect(q.peek()).toEqual(5);
+  expect(q.remove()).toEqual(5);
+  expect(q.peek()).toEqual(6);
+  expect(q.remove()).toEqual(6);
+  expect(q.remove()).toEqual(undefined);
+});
