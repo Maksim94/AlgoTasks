@@ -55,3 +55,36 @@ class Queue {
 }
 
 module.exports = Queue;
+
+// Alternative solution
+
+/*
+class Queue {
+    constructor() {
+        this.stackA = new Stack();
+        this.stackB = new Stack();
+    }
+
+    add(value) {
+        this.stackA.push(value);
+    }
+
+    remove() {
+        this.__fillStackB();
+        return this.stackB.pop();
+    }
+
+    peek() {
+        this.__fillStackB();
+        return this.stackB.peek();
+    }
+
+    __fillStackB() {
+        if (!this.stackB.peek()) {
+            while(this.stackA.peek()) {
+                this.stackB.push(this.stackA.pop());
+            }
+        }
+    }
+}
+*/
